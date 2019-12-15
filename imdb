@@ -1,0 +1,59 @@
+import json
+data = open('movies_list.json','r')
+sample = json.load(data)
+
+print(len(sample))
+
+# Top director with max number of movies ("genre")
+def top_director(*args, **kwargs):
+    top_director = max(sample, key=lambda x: len(x['genre']))
+    print(top_director["director"]," = ", (top_director['genre']))
+
+
+# Top director with max number of movies ("popularity")
+
+def top_dir(*args, **kwargs):
+    el = []
+    for x in sample:
+        el.append((x['99popularity'], x['director']))
+    print(max(el))
+
+
+# Top 10 movies according to imdb score
+
+def top_10(*args, **kwargs):
+    decreasing_order = sorted(sample, key = lambda x:x['imdb_score'], reverse = True)
+    print((decreasing_order))
+    for x, y in enumerate(decreasing_order, start=1):
+        if x <= 10:
+            print(x, y['name'])
+
+
+# Least 10 movies according to imdb score
+
+def least_10(*args, **kwargs):
+    increasing_order = sorted(sample, key = lambda x:x['imdb_score'])
+    print((increasing_order))
+    for a, b in enumerate(increasing_order, start=1):
+        if a <= 10:
+            print(a, b['name'])
+
+# who is best director in top 100 records
+def best_director(*args, **kwargs):
+    el2= []
+    for i , x in enumerate(sample, start=1):
+        if i <= 100:
+            el2.append(x)
+
+    m = max(el2, key= lambda x:x['imdb_score'])
+    a = m['imdb_score']
+    for x in el2:
+        if x['imdb_score'] == a:
+            print('\n Top director = ', x['director'], x['imdb_score'])
+
+########################################################################
+top_director(sample)
+top_dir(sample)
+top_10(sample)
+least_10(sample)
+best_director(sample)
