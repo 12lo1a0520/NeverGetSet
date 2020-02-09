@@ -1,0 +1,40 @@
+step 1: $ sudo apt-get install git -y
+
+step 2: git --version (to check git version)
+
+step 3: git config --global user.name "reposatory-name"
+
+step 4: git config --global user.email "12..@gmail.com"
+
+step 5: git config --list (to check config list)
+
+step 6: create a folder (mkdir..)
+
+step 7: cd created-folder
+
+step 8: go to github.com and create an account and a reposatory
+
+step 9: copy the url from clone and download button
+
+step 10: (open terminal) $ git clone "paste url here"
+
+step 11: go to reposetary folder (cd reposatory-folder)
+
+step 12: $ touch helloworld.py (creating a python file)
+
+step 13: $ ls (to see file created or not)
+
+step 14: $ gedit helloworld.py (it'll open a editor to paste the code)
+
+step 15: paste the code and save it, you can close after saving it
+
+step 16: $ git add helloworld.py (it uploads helloworld file)
+
+step 17: $ git status (to check file status: if file name is in red color i.e., it is not uploaded
+			if it is in green color i.e., it is uploaded
+
+step 18: $ git commit -m "type some message" helloworld.py
+
+step 19: $ git push -u origin master (is asks user name, pass)
+
+step 20: refersh your github website to see pushed file 
